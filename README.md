@@ -1,1 +1,1 @@
-# BM_notes_on_Data_Science
+# BM notes on Data Science
