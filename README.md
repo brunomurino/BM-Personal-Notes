@@ -1,1 +1,1 @@
-# BM notes on Data Science
+# BM Personal Notes
