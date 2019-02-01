@@ -29,18 +29,28 @@ SELECT DATABASE();
 | databasename |
 +--------------+
 ```
-To create a table names "books" with some fields that can't be `NULL`:
+To create a table named "books" with some fields that can't be `NULL`:
 ```sql
 CREATE TABLE books (  
     -> title VARCHAR(50) NOT NULL, 
     -> author VARCHAR(50) NOT NULL, 
     -> book_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
 ```
+To see what tables are in the database that's being used:
+```sql
+SHOW TABLES;
++------------------------+
+| Tables_in_databasename |
++------------------------+
+| books                  |
++------------------------+
+```
+
 To see the schema of a table names `books` of a database called `databasename`:
 ```sql
 DESCRIBE databasename.books;
 +---------+------------------+------+-----+---------+----------------+
-| Field   | Type             | Null | Key | Default | Extra          |
+| Field   | Type             | Null | Key | Default | Extra          | 
 +---------+------------------+------+-----+---------+----------------+
 | title   | varchar(50)      | NO   |     | NULL    |                |
 | author  | varchar(50)      | NO   |     | NULL    |                |
@@ -48,6 +58,10 @@ DESCRIBE databasename.books;
 +---------+------------------+------+-----+---------+----------------+
 ```
 
+To add a new field ('language') to an existing table, after a field ('author'):
+```sql
+ALTER TABLE books ADD language VARCHAR(50) AFTER author;
+```
 
 
 
